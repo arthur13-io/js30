@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background: url('/day\ 2/dark.jpg');
+    background-size: cover;
+    text-align: center;
+    font-size: 10px;
+}
+body{
+    font-family: 'montserrat', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.clock{
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    border: 20px solid white;
+    position: relative;
+    margin: 50px auto;
+    padding: 2rem;
+}
+.clock .numbers{
+    font-size: 1rem;
+    color: white;
+    font-weight: 900;
+
+}
+.clock .numbers .twelve{
+    position: absolute;
+    right: 50%;
+    top: 0;
+}
+.clock .numbers .three{
+    position: absolute;
+    right: 2%;
+    bottom: 50%;
+}
+.clock .numbers .six{
+    position: absolute;
+    right: 50%;
+    bottom: 0%;
+}
+.clock .numbers .nine{
+    position: absolute;
+    left: 2%;
+    bottom: 50%;
+}
+.clock .clock-face{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateY(-3px);
+}
+.clock .hand{
+    width: 50%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    
+}
+.clock .second-hand{
+    background-color: red;
+}
+.clock .minute-hand{
+    background-color: #FFD700;
+}
+.second-hand.no-transition{
+    transition: none;
+}
