@@ -1,0 +1,37 @@
+:root{
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #020036;
+    color: white;
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    
+}
+h2{
+    font-size: 2rem;
+    margin: 1rem;
+}
+.controls{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+img{
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+    width: 500px;
+}
+.h1{
+    color: var(--base);
+}
