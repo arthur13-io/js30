@@ -17,4 +17,11 @@ const sort = inventors.sort((a,b)=> a.year > b.year ? 1 : -1);
 // console.table(sort);
 //Array.reduce()
 const reduce = inventors.reduce((sum, inventor)=> sum + inventor.passed - inventor.year,0);
-console.log(reduce);
+// console.log(reduce);
+//Sorting the oldest person
+const oldest = inventors.sort((a, b)=>{
+    const lastGuy = a.passed - a.year;
+    const nextGuy = b.passed - b.year;
+    return lastGuy > nextGuy ? -1 : 1;
+})
+console.table(oldest);
