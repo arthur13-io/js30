@@ -14,4 +14,7 @@ const names = inventors.map(inventor => inventor.firstName + ' ' + inventor.last
 // console.log(names);
 //Array.sort();
 const sort = inventors.sort((a,b)=> a.year > b.year ? 1 : -1);
-console.table(sort);
+// console.table(sort);
+//Array.reduce()
+const reduce = inventors.reduce((sum, inventor)=> sum + inventor.passed - inventor.year,0);
+console.log(reduce);
