@@ -24,4 +24,20 @@ const oldest = inventors.sort((a, b)=>{
     const nextGuy = b.passed - b.year;
     return lastGuy > nextGuy ? -1 : 1;
 })
-console.table(oldest);
+// console.table(oldest);
+
+//filtering in a category in https://wikipedia.org/wiki/Category:Boulevards_in_Paris
+// const category = document.querySelector('.mw-category');
+// const Names = [...category.querySelectorAll('a')];
+// const de = Names.map(Name=> Name.textContent)
+//                 .filter(streetNames => streetNames.includes('de'));
+// // console.log(de);
+
+const pep = people.sort((lastOne, firstOne)=>{
+    const [aLast, aFirst] = lastOne.split(', ');
+    const [bLast, bFirst] = firstOne.split(', ');
+    
+    return aLast > bLast ? 1 : -1;
+}
+);
+console.log(pep);
