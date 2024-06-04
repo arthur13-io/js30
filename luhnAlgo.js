@@ -1,23 +1,24 @@
 function checkCardNumber(arr){
-    if(arr.length < 16){
-        // console.log('Credit card number is supposed to be 16 characters');
+    if(arr.length !== 16){
         return;
     }
     else{
-        for(let i = arr.length -1; i >= 0; i--){
-            // console.log(arr[i]);
-            if(i%2 !== 2){
+        arr.reverse();
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            if(i%2 !== 0){
                 let multiply = arr[i]*2;
                 if(multiply > 9){
-                    multiply = multiply - 9;
-                    }
-                let index = arr.indexOf(arr[i], i)
-                if(index !== 0){
-                    let temp = arr[i];
-                    arr[i] = multiply;
+                    arr[i] = multiply - 9;
                 }
             }
-            console.log(arr[i]);
+            sum += arr[i];
+        }
+        if(sum%10 === 0){
+            console.log(`${arr} is valid`);
+        }
+        else{
+            console.log('Invalid card number');
         }
     }
 }
