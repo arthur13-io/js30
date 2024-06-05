@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: aquamarine;
+            font-family: 'Montserrat', sans-serif;
+        }
+        ::placeholder{
+            font-size: 1rem;
+            font-family: 'Montserrat';
+        }
+        .container{
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 5rem;
+        }
+        input{
+            padding: 1rem;
+            width: 500px;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+        .suggestions{
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* width: 400px; */
+        }
+        ul li{
+            width: 20%;
+            /* max-width: max-content; */
+            padding: .4rem;
+        }
+        ul li:first-child{
+            background-color: white;
+            transform: perspective(100px) rotateX(-3deg) translateY(3px);
+        }
+        ul li:last-child{
+            background-color: white;
+            margin-top: .2rem;
+            transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+        }
+        span.population {
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <input type="text" placeholder="search for city..." class="search">
+        <ul class="suggestions">
+            <li>Filter for city</li>
+            <li>or a state</li>
+        </ul>
+    </div>
     <script src="ajax.js"></script>
 </body>
 </html>
