@@ -11,19 +11,25 @@ function findMatch(wordToMatch, cities){
         return place.city.match(regEx) || place.state.match(regEx);
     });
 }
+function numberWithCommas(x){
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 
 const search = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions')
 function displayMatches(){
     const matchArray = findMatch(this.value, cities);
     const html = matchArray.map(place => {
+        const regEx = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regEx, `<span class="h1">${this.value}</span>`)
+        const stateName = place.state.replace(regEx, `<span class="h1">${this.value}</span>`)
         return `
         <li>
-            <span class="name">${place.city}, ${place.state}}</span>
-            <span class="population>${place.population}</span>
+            <span class="name">${cityName}, ${stateName}</span>
+            <span class="population">${numberWithCommas(place.population)}</span>
         </li>
         `
-    });
+    }).join('');
     suggestions.innerHTML = html;
 }
 
