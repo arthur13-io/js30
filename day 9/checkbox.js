@@ -1,12 +1,3 @@
-// const item = document.querySelectorAll('.item');
-// const itemArr = Array.from(item);
-// itemArr.forEach(item=>{
-//     const checkbox = item.querySelectorAll('input[checkbox]');
-// });
-
-// itemArr.addEventListener('onclick', (e)=>{
-//     console.log(e);
-// })
 const checkbox = document.querySelectorAll('input[type=checkbox]');
 const arr = Array.from(checkbox);
 let lastchecked;
@@ -15,8 +6,20 @@ arr.forEach(item=>{
 });
 
 function handleCheck(e){
+    let inBetween = false;
     if(e.shiftKey && this.checked){
-        
+        arr.forEach(check =>{
+            const label = check.parentElement;
+            if(check.checked){
+                inBetween = !inBetween;
+                label.classList.add('strikeThrough');
+            }
+            if(inBetween){
+                check.checked = true;
+                label.classList.add('strikeThrough');
+
+            }
+        })
     }
     lastchecked = this
 }

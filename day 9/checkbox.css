@@ -26,3 +26,6 @@ body{
     align-items: center;
     gap: 1rem;
 }
+.strikeThrough{
+    text-decoration: line-through;
+}
