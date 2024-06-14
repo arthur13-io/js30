@@ -1,6 +1,5 @@
 const checkbox = document.querySelectorAll('input[type=checkbox]');
 const arr = Array.from(checkbox);
-let lastchecked;
 arr.forEach(item=>{
     item.addEventListener('click', handleCheck);
 });
@@ -21,5 +20,4 @@ function handleCheck(e){
             }
         })
     }
-    lastchecked = this
 }
