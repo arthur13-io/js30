@@ -16,7 +16,6 @@ function handleCheck(e){
             if(inBetween){
                 check.checked = true;
                 label.classList.add('strikeThrough');
-
             }
         })
     }
